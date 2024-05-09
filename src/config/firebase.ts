@@ -6,16 +6,16 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCnCYFeLHIZRYe5ify5W2ihDdbyqltDbwY",
-  authDomain: "fir-notifications-e4d7c.firebaseapp.com",
-  projectId: "fir-notifications-e4d7c",
-  storageBucket: "fir-notifications-e4d7c.appspot.com",
-  messagingSenderId: "639337390078",
-  appId: "1:639337390078:web:24088962e83405f5722aaf",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 export const notificationRef = collection(db, "notifications");
 
