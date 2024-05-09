@@ -64,7 +64,6 @@ export const Notifications = () => {
     await refetch();
     toast.success("Notification sent successfully");
   };
-
   // When we are fetching data need to show loader
   if (loading) return <FullscreenLoader />;
 
@@ -73,7 +72,7 @@ export const Notifications = () => {
       <div className="h-screen bg-green-200 flex justify-center items-center">
         <div className="min-w-96 p-5 bg-gray-400 rounded-xl space-y-4">
           <div className="flex items-center justify-between">
-            <h1 className="">Notifications</h1>
+            <h1 className="text-center text-xl font-bold">Notifications</h1>
             <Link to={"/notifications"} className="relative cursor-pointer">
               {notificationCount && (
                 <span className="absolute right-0 size-2.5 bg-yellow-500 inline-block rounded-full"></span>
